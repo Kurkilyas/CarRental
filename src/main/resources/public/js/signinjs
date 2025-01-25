@@ -1,0 +1,29 @@
+// signin.js
+
+// Bu bilgiler normalde bir veritabanından gelir.
+let users = [
+    { username: "umut", password: "123" },
+    // Diğer kullanıcılar...
+];
+
+function isUsernameUnique(username) {
+    return !users.some(user => user.username === username);
+}
+
+
+        //! veri alınıyor aynı username kabul edilmiyor 
+function signIn() {
+    let enteredUsername = document.getElementById("usernameInput").value;
+    let enteredPassword = document.getElementById("passwordInput").value;
+
+    // Kullanıcı adının benzersiz olup olmadığını kontrol et
+    if (isUsernameUnique(enteredUsername)) {
+        // Kullanıcı adı benzersizse, kullanıcıyı ekleyebilirsiniz
+        users.push({ username: enteredUsername, password: enteredPassword });
+        alert("Sign in successful");
+        window.location.href="login.html";
+        
+    } else {
+        alert("Username is not unique. Please choose a different username.");
+    }
+}

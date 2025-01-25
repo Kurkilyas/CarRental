@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+   <!-- Temel -->
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- Mobil meta etiketleri -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+   <!-- Site meta etiketleri -->
+   <title>Rent Now</title>
+   <meta name="keywords" content="">
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <!-- Bootstrap CSS -->
+   <!-- bootstrap css -->
+   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+   <!-- style css -->
+   <link rel="stylesheet" type="text/css" href="css/style.css">
+   <!-- Responsive-->
+   <link rel="stylesheet" href="css/responsive.css">
+   <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}">
+
+   <!-- Duyarlılık -->
+   <link rel="stylesheet" th:href="@{/css/responsive.css}">
+   <!-- Favicon -->
+   <link rel="icon" th:href="@{/images/fevicon.png}" type="image/gif"/>
+   <!-- Font CSS -->
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Raleway:wght@400;500;600;700;800&display=swap"
+         rel="stylesheet">
+   <!-- Özel Kaydırma Çubuğu CSS -->
+   <link rel="stylesheet" th:href="@{/css/jquery.mCustomScrollbar.min.css}">
+
+   <!-- Eski IE'ler için Düzenlemeler-->
+   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+
+<style>
+/*--------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------------- import Files ---------------------------------------------------------------------*/
+
+@import url(animate.min.css);
+@import url(normalize.css);
+@import url(icomoon.css);
+@import url(css/font-awesome.min.css);
+@import url(meanmenu.css);
+@import url(owl.carousel.min.css);
+@import url(swiper.min.css);
+@import url(slick.css);
+@import url(jquery.fancybox.min.css);
+@import url(jquery-ui.css);
+@import url(nice-select.css);
+
+/*--------------------------------------------------------------------- skeleton ---------------------------------------------------------------------*/
+
+* {
+    box-sizing: border-box !important;
+    transition: ease all 0.5s;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: #666666;
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.80857;
+    font-weight: normal;
+    overflow-x: hidden;
+}
+
+a {
+    color: #1f1f1f;
+    text-decoration: none !important;
+    outline: none !important;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    letter-spacing: 0;
+    font-weight: normal;
+    position: relative;
+    padding: 0 0 10px 0;
+    font-weight: normal;
+    line-height: normal;
+    color: #111111;
+    margin: 0
+}
+
+h1 {
+    font-size: 24px
+}
+
+h2 {
+    font-size: 22px
+}
+
+h3 {
+    font-size: 18px
+}
+
+h4 {
+    font-size: 16px
+}
+
+h5 {
+    font-size: 14px
+}
+
+h6 {
+    font-size: 13px
+}
+
+*,
+*::after,
+*::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+    color: #212121;
+    text-decoration: none!important;
+    opacity: 1
+}
+
+button:focus {
+    outline: none;
+}
+
+ul,
+li,
+ol {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+p {
+    margin: 20px;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 24px;
+}
+
+a {
+    color: #222222;
+    text-decoration: none;
+    outline: none !important;
+}
+
+a,
+.btn {
+    text-decoration: none !important;
+    outline: none !important;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ :focus {
+    outline: 0;
+}
+
+.paddind_bottom_0 {
+    padding-bottom: 0 !important;
+}
+
+.btn-custom {
+    margin-top: 20px;
+    background-color: transparent !important;
+    border: 2px solid #ddd;
+    padding: 12px 40px;
+    font-size: 16px;
+}
+
+.lead {
+    font-size: 18px;
+    line-height: 30px;
+    color: #767676;
+    margin: 0;
+    padding: 0;
+}
+
+.form-control:focus {
+    border-color: #ffffff !important;
+    box-shadow: 0 0 0 .2rem rgba(255, 255, 255, .25);
+}
+
+.navbar-form input {
+    border: none !important;
+}
+
+.badge {
+    font-weight: 500;
+}
+
+blockquote {
+    margin: 20px 0 20px;
+    padding: 30px;
+}
+
+button {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+.brand-button {
+
+    background-color: #fe5b29;
+    color: #fff;
+    padding: 10px 20px;
+    border:#0e0c06;
+    border-radius: 40px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.brand-button:hover {
+    background-color: #363636;
+    border-color: #fe5b29;
+}
+
+
+.full {
+    float: left;
+    width: 100%;
+}
+
+.layout_padding {
+    padding-top: 100px;
+    padding-bottom: 0px;
+}
+
+.padding_0 {
+    padding: 0px;
+}
+
+
+/* header section start */
+
+.header_section {
+    width: 100%;
+    float: left;
+    background-color: #0e0c06;
+    height: auto;
+    background-size: 100%;
+}
+
+.header_bg {
+    width: 100%;
+    float: left;
+    background: #1d1d1d;
+    height: auto;
+    background-size: 100%;
+}
+
+.bg-light {
+    background-color: transparent !important;
+}
+
+.mr-auto,
+.mx-auto {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding: 0px 20px;
+    font-size: 17px;
+    color: #fefefd;
+    margin: 0px 5px;
+}
+
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #fe5b29;
+}
+
+
+.navbar-brand {
+    margin: 0px;
+    float: right;
+}
+
+.call_text_main{
+    width: 100%;
+    float: left;
+    background-color: #fe5b29;
+    height: auto;
+    padding: 10px 0px;
+}
+
+.call_taital{
+    width: 100%;
+    display: flex;
+}
+
+.call_text {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.call_text a {
+    width: 100%;
+    float: left;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 0px 20px;
+}
+
+.call_text a:hover {
+    color: #363636;
+}
+
+.padding_left_15 {
+    padding-left: 10px;
+}
+
+/* header section end */
+
+
+/* banner section start */
+
+.banner_section {
+    width: 100%;
+    float: left;
+    background-image: url(../images/banner-bg.png);
+    height: auto;
+    background-size: 100%;
+    padding: 200px 0px 160px 0px;
+}
+
+.banner_taital_main {
+    width: 100%;
+    float: left;
+}
+
+.banner_taital {
+    width: 100%;
+    font-size: 60px;
+    color: #2c2c2c;
+    font-weight: 800;
+    line-height: 70px;
+}
+
+.banner_text {
+    width: 80%;
+    float: left;
+    font-size: 16px;
+    color: #403f3f;
+    margin: 20px 0px 0px 0px;
+}
+
+.btn_main {
+    width: 100%;
+    float: left;
+    padding-top: 40px;
+}
+
+.contact_bt {
+    width: 175px;
+    float: left;
+}
+
+.contact_bt a {
+    width: 100%;
+    float: left;
+    font-size: 18px;
+    background-color: #fe5b29;
+    color: #fcf8f8;
+    text-align: center;
+    padding: 10px;
+}
+
+.contact_bt a:hover {
+    color: #fcf8f8;
+    background-color: #363636;
+}
+
+.contact_bt.active a {
+    color: #fcf8f8;
+    background-color: #363636;
+    margin-left: 10px;
+}
+
+.banner_img {
+    width: 100%;
+    float: left;
+    text-align: center;
+    display: none;
+}
+
+#banner_slider a.carousel-control-prev {
+    left: -120px;
+    top: 155px;
+    right: initial;
+}
+
+#banner_slider a.carousel-control-next {
+    right: initial;
+    top: 100px;
+    left: -120px;
+    color: #fcf8f8;
+    background-color: #363636;
+}
+
+#banner_slider .carousel-control-next,
+#banner_slider .carousel-control-prev {
+    width: 55px;
+    height: 55px;
+    opacity: 1;
+    font-size: 30px;
+    color: #fcf8f8;
+    background-color: #fe5b29;
+}
+
+#banner_slider .carousel-control-next:focus,
+#banner_slider .carousel-control-next:hover,
+#banner_slider .carousel-control-prev:focus,
+#banner_slider .carousel-control-prev:hover {
+    color: #fcf8f8;
+    background-color: #363636;
+}
+
+/* banner section end */
+
+/* about section start */
+
+.about_section {
+    width: 100%;
+    float: left;
+    padding: 90px 0px;
+}
+
+.about_section_2 {
+    width: 100%;
+    float: left;
+}
+
+.about_taital {
+    width: 100%;
+    float: left;
+    font-size: 40px;
+    color: #3b3b3b;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-bottom: 0px;
+}
+
+.about_taital_box {
+    width: 100%;
+    float: left;
+    padding-top: 15px;
+}
+
+.about_img {
+    width: 100%;
+}
+
+.about_text {
+    width: 91%;
+    float: left;
+    font-size: 16px;
+    color: #2d2d2d;
+    margin: 30px 0px 0px 0px;
+}
+
+.readmore_btn {
+    width: 170px;
+    float: left;
+    margin-top: 40px;
+}
+
+.readmore_btn a {
+    width: 100%;
+    float: left;
+    font-size: 18px;
+    color: #fcf8f8;
+    background-color: #fe5b29;
+    border-radius: 3px;
+    padding: 10px;
+    text-align: center;
+}
+
+.readmore_btn a:hover {
+    color: #fcf8f8;
+    background-color: #363636;
+}
+
+.readmore_btn button {
+    display: inline-block;
+    margin-right: 10px;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 18px;
+    color: #fcf8f8;
+    background-color: #fe5b29;
+    border-radius: 200px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+
+
+/* about section end */
+
+/* search section start */
+/* select box section start */
+
+.search_section {
+    width: 100%;
+    float: left;
+    background-color: #363636;
+    height: auto;
+    padding: 40px 0px;
+    background-size: cover;
+}
+
+.select_box_section {
+    width: 100%;
+    float: left;
+}
+
+.search_taital{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    float: right;
+    font-size: 40px;
+    color: #fefefd;
+    font-weight: bold;
+}
+.search_text{
+    width: 100%;
+    float: left;
+    font-size: 16px;
+    color: #fefefd;
+    margin: 0px;
+}
+
+.select_box_main {
+    width: 100%;
+    height: auto;
+    padding: 40px 0px 0px 0px;
+}
+
+.md-outline.select-wrapper+label {
+    top: .5em !important;
+    z-index: 2 !important;
+}
+
+.nice-select {
+    width: 100%;
+    background-color: #ffffff !important;
+    border: 0px;
+    border-radius: 3px;
+}
+
+span.current {
+    color: #1a1a1a;
+}
+
+.nice-select:after {
+    width: 10px;
+    height: 10px;
+}
+
+.nice-select {
+    color: #363636;
+    font-size: 18px;
+}
+
+.search_btn {
+    display: grid;
+    place-items: center;
+    width: 200px;
+    text-align: center;
+
+}
+
+.search_btn a {
+    width: 100%;
+    float: right;
+    font-size: 18px;
+    color: #fefefd;
+    background-color: #fe5b29;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.search_btn a:hover {
+    float: right;
+    color: #363636;
+    background-color: #ffffff;
+}
+
+.search_btn button{
+    width: 100%;
+    float: right;
+    font-size: 18px;
+    color: #fefefd;
+    background-color: #fe5b29;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+
+/* select box section end */
+/* search section end */
+
+
+/* gallery section start */
+
+.gallery_section {
+    width: 100%;
+    float: left;
+    padding: 90px 0px;
+}
+
+.gallery_taital {
+    width: 100%;
+    float: left;
+    font-size: 40px;
+    color: #3b3b3b;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 0px;
+}
+
+.gallery_section_2 {
+    width: 100%;
+    float: left;
+    padding-top: 30px;
+}
+
+.gallery_img img {
+    width: 100%;
+    float: left;
+    min-height: 182px;
+}
+
+.gallery_box {
+    width: 100%;
+    float: left;
+    background-color: #ffffff;
+    height: auto;
+    padding: 20px 20px;
+    box-shadow: 0px 0px 6px 6px #f4f3f2;
+}
+.gallery_box:hover {
+    box-shadow: 0px 0px 0px 0px;
+}
+
+.types_text {
+    width: 100%;
+    float: left;
+    font-size: 22px;
+    color: #2f2e2d;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 30px;
+}
+
+.looking_text {
+    width: 100%;
+    float: left;
+    font-size: 18px;
+    color: #fe5b29;
+    text-align: center;
+    margin: 0px;
+    font-weight: bold;
+}
+
+.read_bt {
+    width: 150px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 20px;
+    display: flex;
+}
+
+.read_bt a {
+    width: 100%;
+    float: left;
+    font-size: 16px;
+    color: #fefefd;
+    text-align: center;
+    background-color: #fe5b29;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.read_bt a:hover {
+    color: #fefefd;
+    background-color: #363636;
+}
+
+#main_slider a.carousel-control-prev {
+    left: -50px;
+    top: 170px;
+}
+
+#main_slider a.carousel-control-next {
+    right: -50px;
+    top: 170px;
+
+}
+
+#main_slider .carousel-control-next,
+#main_slider .carousel-control-prev {
+    width: 55px;
+    height: 55px;
+    opacity: 1;
+    font-size: 16px;
+    color: #fefefd;
+    background-color: #4a4949;
+}
+
+#main_slider .carousel-control-next:focus,
+#main_slider .carousel-control-next:hover,
+#main_slider .carousel-control-prev:focus,
+#main_slider .carousel-control-prev:hover {
+    color: #fefefd;
+    background-color: #f01c1c;
+}
+
+
+/* gallery section end */
+
+/* choose section start */
+
+.choose_section{
+    width: 100%;
+    float: left;
+    background-color: #363636;
+    height: auto;
+    padding: 40px 0px;
+}
+
+.choose_taital{
+    width: 100%;
+    float: left;
+    font-size: 40px;
+    color: #fefefd;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.choose_section_2{
+    width: 100%;
+    float: left;
+    padding-top: 40px;
+}
+
+.icon_1 {
+    width: 100%;
+    float: left;
+    min-height: 50px;
+}
+
+.safety_text{
+    width: 100%;
+    float: left;
+    color: #fefefd;
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+.ipsum_text {
+    width: 100%;
+    float: left;
+    color: #fefefd;
+    font-size: 16px;
+    margin: 0px;
+}
+
+/* choose section end */
+
+/* client section start */
+
+.client_section {
+    width: 100%;
+    float: left;
+}
+
+.client_taital {
+    width: 100%;
+    float: left;
+    font-size: 40px;
+    color: #292828;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+
+.client_section_2 {
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    padding-top: 90px;
+}
+
+.client_taital_box {
+    width: 100%;
+    float: left;
+    background-color: #ffffff;
+    height: auto;
+    padding: 0px 20px 30px 20px;
+    box-shadow: 0px 0px 10px 10px #ebebea;
+}
+
+.client_img {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    top: -30px;
+}
+
+.moark_text {
+    width: 100%;
+    float: left;
+    font-size: 24px;
+    color: #1d1f1e;
+    font-weight: bold;
+    text-align: center;
+    padding: 0px 0px 20px 0px;
+}
+
+.client_text {
+    width: 100%;
+    float: left;
+    font-size: 16px;
+    color: #282828;
+    margin: 0px;
+    text-align: center;
+}
+
+.quick_icon{
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#custom_slider a.carousel-control-prev {
+    left: 80px;
+    top: 270px;
+}
+
+#custom_slider a.carousel-control-next {
+    right: 80px;
+    top: 270px;
+
+}
+
+#custom_slider .carousel-control-next,
+#custom_slider .carousel-control-prev {
+    width: 55px;
+    height: 55px;
+    opacity: 1;
+    font-size: 30px;
+    color: #fefefd;
+    background-color: #fa5a29;
+}
+
+#custom_slider .carousel-control-next:focus,
+#custom_slider .carousel-control-next:hover,
+#custom_slider .carousel-control-prev:focus,
+#custom_slider .carousel-control-prev:hover {
+    color: #fefefd;
+    background-color: #363636;
+}
+
+
+/* client section end */
+
+/* contact section start */
+
+.contact_section {
+    width: 100%;
+    float: left;
+}
+
+.contact_taital {
+    width: 100%;
+    float: left;
+    font-size: 40px;
+    color: #363636;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.contact_section_2 {
+    width: 100%;
+    margin: 0 auto;
+    padding: 110px 20px 50px 20px;
+    background-color: #fe5b29;
+    border-top-left-radius: 540px;
+    border-top-right-radius: 540px;
+    margin-top: 50px;
+}
+
+.padding_left_0 {
+    padding-left: 0px;
+}
+
+.mail_section_1 {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.mail_text {
+    width: 100%;
+    float: left;
+    font-size: 16px;
+    color: #2a2a2c;
+    border: 0px;
+    background-color: #ffffff;
+    padding: 11px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+input.mail_text::placeholder {
+    color: #2a2a2c;
+}
+
+.massage-bt {
+    color: #2a2a2c;
+    width: 100%;
+    height: 110px;
+    font-size: 18px;
+    background-color: #ffffff;
+    padding: 40px 20px 0px 20px;
+    border: 0px;
+    height: 110px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+textarea#comment.massage-bt::placeholder {
+    color: #2a2a2c;
+}
+
+.send_bt {
+    width: 170px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.send_bt a {
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    color: #fefefd;
+    background-color: #fe2929;
+    padding: 12px;
+    margin-top: 20px;
+    display: block;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.send_bt a:hover {
+    color: #363636;
+    background-color: #ffffff;
+}
+
+.map_main {
+    width: 100%;
+    float: left;
+    margin-top: 90px;
+}
+
+
+/* contact section end */
+
+
+/* footer section start */
+
+.footer_section {
+    width: 100%;
+    float: left;
+    height: auto;
+    background-color: #363636;
+    background-size: 100%;
+    padding: 50px 0px;
+}
+
+.footeer_logo{
+    width: 100%;
+    float: left;
+    text-align: center;
+}
+
+.footer_section_2{
+    width: 100%;
+    float: left;
+    padding-top: 50px;
+}
+
+.footer_taital {
+    width: 100%;
+    float: left;
+    font-size: 26px;
+    color: #fefefd;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.lorem_text {
+    width: 60%;
+    float: left;
+    font-size: 16px;
+    color: #fefefd;
+    margin: 0px;
+}
+
+.footer_text {
+    width: 100%;
+    float: left;
+    font-size: 16px;
+    color: #fefefd;
+    margin: 0px;
+}
+
+.social_icon {
+    width: 100%;
+    float: left;
+    margin-top: 10px;
+}
+
+.social_icon ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.social_icon li {
+    float: left;
+}
+
+.social_icon li a {
+    float: left;
+    padding: 2px 7px;
+    background-color: #ffffff;
+    color: #2e2e2e;
+    border-radius: 100%;
+    font-size: 20px;
+    margin-right: 5px;
+    width: 41px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.social_icon li a:hover {
+    background-color: #fe5b29;
+    color: #ffffff;
+}
+
+.update_mail {
+    color: #ffffff;
+    width: 100%;
+    height: 55px;
+    font-size: 18px;
+    padding: 10px 20px 0px 0px;
+    background-color: transparent;
+    border-bottom: 1px solid #ffffff !important;
+    border: 0px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    display: block;
+}
+
+textarea#comment::placeholder {
+    color: #fff;
+}
+
+.subscribe_bt {
+    width: 140px;
+    float: right;
+    margin-top: 20px;
+}
+
+.subscribe_bt a {
+    width: 100%;
+    float: left;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 8px 0px;
+    text-transform: uppercase;
+    background-color: #fe5b29;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.subscribe_bt a:hover {
+    color: #363636;
+    background-color: #ffffff;
+}
+
+.location_text {
+    width: 100%;
+    float: left;
+}
+
+.location_text a {
+    width: 100%;
+    float: left;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.location_text a:hover {
+    color: #fe5b29;
+}
+
+.padding_left_15 {
+    padding-left: 10px;
+}
+
+
+
+/* footer section end */
+
+
+/* copyright section start */
+
+.copyright_section {
+    width: 100%;
+    float: left;
+    background-color: #363636;
+    height: auto;
+}
+
+.copyright_text {
+    width: 100%;
+    float: left;
+    font-size: 16px;
+    color: #fefefd;
+    text-align: center;
+    margin-left: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.copyright_text a {
+    color: #fefefd;
+}
+
+.copyright_text a:hover {
+    color: #fe5b29;
+}
+
+
+/* copyright section end */
+
+.margin_top90 {
+    margin-top: 90px;
+}
+
+.group-container {
+    display: flex;
+}
+
+.group {
+    width: 200px;
+    height: 500px;
+    border: 2px solid #ffffff;
+    padding: 10px;
+    margin: 10px;
+}
+
+         .dropdown {
+             position: relative;
+             display: inline-block;
+         }
+
+         .dropbtn {
+             padding: 12px 16px;
+             font-size: 16px;
+             border: none;
+             cursor: pointer;
+         }
+
+         .dropdown-content {
+             display: none;
+             position: absolute;
+             background-color: #0e0c06;
+             min-width: 160px;
+             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+             z-index: 1;
+             opacity: 0;
+             transition: opacity 0.3s ease-in-out;
+         }
+
+         .dropdown-content a {
+             color: black;
+             padding: 12px 16px;
+             display: block;
+             text-decoration: none;
+             transition: background-color 0.3s ease-in-out;
+         }
+
+         .dropdown-content a:hover {
+             background-color: #0e0c06;
+         }
+
+         .dropdown:hover .dropdown-content {
+             display: block;
+             opacity: 1;
+         }
+
+
+</style>
+   <style>
+        .yan-yana {
+            display: flex;
+            align-items: flex-start; /* İçerikleri soldan başla */
+            margin-bottom: 10px; /* Opsiyonel: Her yan yana div'in altında boşluk bırakmak için */
+        }
+
+    </style>
+</head>
+<body>
+<!-- Başlık bölümü başlangıcı -->
+<div class="header_section">
+   <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+<!--               <li class="nav-item">-->
+<!--                  <a class="nav-link" href="indexAdmin.html">Home</a>-->
+<!--               </li>-->
+<!--               <li class="nav-item">-->
+<!--                  <a class="nav-link" href="aboutAdmin.html">About</a>-->
+<!--               </li>-->
+<!--               <li class="nav-item">-->
+<!--                  <a class="nav-link" href="allAdsAdmin.html">All Car's</a>-->
+<!--               </li>-->
+<!--               <li class="nav-item">-->
+<!--                  <a class="nav-link" href="#kaykay">Brand's</a>-->
+<!--               </li>-->
+<!--               <li class="nav-item">-->
+<!--                  <a class="nav-link" href="myAds.html">My Ad's</a>-->
+<!--               </li>-->
+<!--               <li class="nav-item">-->
+<!--                  <a class="nav-link" href="addCar.html">Add a New Ad</a>-->
+<!--               </li>-->
+               <li class="nav-item">
+                  <a class="nav-link" href="/login.html">LogOut</a>
+               </li>
+
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+            </form>
+         </div>
+      </nav>
+   </div>
+</div>
+<!-- Başlık bölümü sonu -->
+<div class="call_text_main">
+   <div class="container">
+      <div class="call_taital">
+         <div class="call_text"><a
+                 href="https://www.google.com/maps/place/Turgutlu,+Manisa/@38.4922742,27.6537038,13z/data=!3m1!4b1!4m6!3m5!1s0x14b9a7bd7c6104a9:0x5dab35ef99b66f28!8m2!3d38.500161!4d27.70841!16zL20vMGJqX25u?authuser=0&entry=ttu"
+                 target="_blank"><i class="fa fa-map-marker" aria-hidden="true"></i><span
+                 class="padding_left_15">Turgutlu</span></a></div>
+         <div class="call_text"><a href="#"><i class="fa fa-phone" aria-hidden="true"></i><span
+                 class="padding_left_15">(+90) 543 422 32 36</span></a></div>
+         <div class="call_text"><a href="https://www.google.com/intl/tr/gmail/about/" target="_blank"><i
+                 class="fa fa-envelope" aria-hidden="true"></i><span class="padding_left_15">cbu@gmail.com</span></a>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- Hakkında bölümü başlangıcı -->
+
+
+<div class="about_section layout_padding" style="padding: 20px;">
+   <div class="container-fluid">
+      <h1 class="about_taital" style="text-align: center; margin-bottom: 40px;">About <span style="color: rgb(255, 85, 0);">Car</span></h1>
+      <div th:each="car : ${Cars}" class="row align-items-center" style="margin-bottom: 50px; border: 1px solid #ddd; border-radius: 10px; padding: 20px;">
+         <!-- Araba Fotoğrafı -->
+         <div class="col-md-5 text-center">
+            <img th:src="'data:image/jpeg;base64,' + ${car.carPhoto}" alt="Car Photo"
+                 style="width: 100%; max-width: 450px; height: auto; border-radius: 10px;">
+         </div>
+         <!-- Araba Bilgileri -->
+         <div class="col-md-7">
+            <h3><strong>Plate:</strong> <span th:text="${car.plate}"></span></h3>
+            <p><strong>Daily Price:</strong> <span th:text="${car.dailyPrice}"></span></p>
+            <p><strong>Model Year:</strong> <span th:text="${car.modelYear}"></span></p>
+            <p><strong>State:</strong> <span th:text="${car.stateName}"></span></p>
+            <p><strong>Km:</strong> <span th:text="${car.km}"></span></p>
+            <p><strong>Date of Announcement:</strong> <span th:text="${car.dateOfAnnouncement}"></span></p>
+            <p><strong>Status:</strong> <span th:text="${car.statusName}"></span></p>
+            <p><strong>Color:</strong> <span th:text="${car.colorName}"></span></p>
+            <p><strong>Fuel Type:</strong> <span th:text="${car.fuelName}"></span></p>
+            <p><strong>Gear Type:</strong> <span th:text="${car.gearName}"></span></p>
+            <p><strong>Model:</strong> <span th:text="${car.modelName}"></span></p>
+            <p><strong>Brand:</strong> <span th:text="${car.brandName}"></span></p>
+            <!-- Kirala Butonu -->
+            <div style="margin-top: 20px;">
+
+               <!-- Connect Wallet ve Make Payment Butonları -->
+               <div style="margin-top: 20px;">
+                  <button onclick="connectWallet()" class="btn btn-primary"
+                          style="padding: 15px 30px; background-color: rgb(255, 85, 0); color: white; text-decoration: none; border-radius: 5px;">
+                     Connect Wallet
+                  </button>
+                  <button th:onclick="'makePayment(' + ${car.id} + ',' + ${car.dailyPrice} + ')'"
+                          class="btn btn-success"
+                          style="padding: 15px 30px; margin-left: 20px; background-color: green; color: white; text-decoration: none; border-radius: 5px;">
+                     Make Payment
+                  </button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<!-- Alt bölüm başlangıcı -->
+<div class="footer_section layout_padding">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <div class="footeer_logo"><img src="images/logo.png"></div>
+         </div>
+      </div>
+      <div class="footer_section_2">
+         <div class="row">
+            <div class="col">
+               <h4 class="footer_taital">Subscribe Now</h4>
+               <p class="footer_text">There are many variations of passages of Lorem Ipsum available,</p>
+               <div class="form-group">
+                  <textarea class="update_mail" placeholder="Enter Your Email" rows="5" id="comment" name="Enter Your Email"></textarea>
+                  <div class="subscribe_bt"><a href="#">Subscribe</a></div>
+               </div>
+            </div>
+            <div class="col">
+               <h4 class="footer_taital">Information</h4>
+               <p class="lorem_text">There are many variations of passages of Lorem Ipsum available, but the majority </p>
+            </div>
+            <div class="col">
+               <h4 class="footer_taital">Helpful Links</h4>
+               <p class="lorem_text">There are many variations of passages of Lorem Ipsum available, but the majority </p>
+            </div>
+            <div class="col">
+               <h4 class="footer_taital">Invesments</h4>
+               <p class="lorem_text">There are many variations of passages of Lorem Ipsum available, but the majority </p>
+            </div>
+            <div class="col">
+               <h4 class="footer_taital">Contact Us</h4>
+               <div class="location_text"><a href="https://www.google.com/maps/place/Turgutlu,+Manisa/@38.4922742,27.6537038,13z/data=!3m1!4b1!4m6!3m5!1s0x14b9a7bd7c6104a9:0x5dab35ef99b66f28!8m2!3d38.500161!4d27.70841!16zL20vMGJqX25u?authuser=0&entry=ttu" target="_blank"><i class="fa fa-map-marker" aria-hidden="true"></i><span class="padding_left_15">Turgutlu</span></a></div>
+               <div class="location_text"><a href="#"><i class="fa fa-phone" aria-hidden="true"></i><span class="padding_left_15">(+90) 543 422 32 36</span></a></div>
+               <div class="location_text"><a href="https://www.google.com/intl/tr/gmail/about/" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i><span class="padding_left_15">cbu@gmail.com</span></a></div>
+               <div class="social_icon">
+                  <ul>
+                     <li><a href="https://www.facebook.com/login/?privacy_mutation_token=eyJ0eXBlIjowLCJjcmVhdGlvbl90aW1lIjoxNzAzNzYzMTAyLCJjYWxsc2l0ZV9pZCI6MjY5NTQ4NDUzMDcyMDk1MX0%3D"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                     <li><a href="https://twitter.com/i/flow/login"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                     <li><a href="https://tr.linkedin.com/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                     <li><a href="https://www.instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- Alt bölüm sonu -->
+</body>
+</html>
+<script>
+   // MetaMask kontrolü ve cüzdan bağlantısı
+   async function connectWallet() {
+      if (window.ethereum) {
+         try {
+            // MetaMask cüzdanını bağla
+            const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+            console.log("Bağlı hesap:", accounts[0]);
+            alert(`Bağlantı başarılı! Cüzdan adresi: ${accounts[0]}`);
+            return accounts[0]; // Bağlı cüzdan adresi
+         } catch (error) {
+            console.error("Cüzdan bağlantısı başarısız:", error);
+            alert("Cüzdan bağlantısı reddedildi.");
+         }
+      } else {
+         alert("MetaMask yüklü değil. Lütfen MetaMask'ı yükleyin.");
+      }
+   }
+
+   // Ödeme işlemi
+   async function makePayment(carId, carPrice) {
+      const recipientAddress = "0x4644093d4A08728C44F99F292475C9094f95fA69"; // Şirket cüzdanı
+      const amountInEther = carPrice; // Gönderilecek miktar (ETH cinsinden)
+
+      // Backend'den aracın durumunu sorgula
+      const carResponse = await fetch(`http://localhost:8090/cars/${carId}/getstatus`);
+      const carData = await carResponse.json();
+
+      if (carData.status && carData.status.toLowerCase() === "dolu") {
+         alert("Bu araç dolu. Ödeme işlemi yapılamaz.");
+         return;
+      }
+
+      if (window.ethereum) {
+         try {
+            // MetaMask hesabını al
+            const accounts = await window.ethereum.request({ method: "eth_accounts" });
+            if (!accounts || accounts.length === 0) {
+               throw new Error("MetaMask hesabı bağlanmamış. Lütfen bir hesap bağlayın.");
+            }
+
+            const fromAddress = accounts[0];
+            const amountInWei = BigInt(parseFloat(amountInEther) * 1e18).toString(16);
+
+            // Ethereum ağına ödeme işlemini gönder
+            const transactionParameters = {
+               from: fromAddress,
+               to: recipientAddress,
+               value: `0x${amountInWei}`,
+            };
+
+            const txHash = await window.ethereum.request({
+               method: "eth_sendTransaction",
+               params: [transactionParameters],
+            });
+
+            alert(`Ödeme başarılı! Tx Hash: ${txHash}`);
+            // Araç durumu güncelleme
+            const response2 = await fetch(`http://localhost:8090/cars/${carId}/pay`, {
+               method: "POST",
+               headers: {
+                  "Content-Type": "application/json",
+               },
+               body: JSON.stringify({ transactionHash: txHash }),
+            });
+            if (!response2.ok) {
+               const errorText = await response2.text();
+               console.error("Araç durumu güncelleme hatası:", errorText);
+               alert(`Araç durumu güncelleme hatası: ${errorText}`);
+               return;
+            }
+
+// Ödeme kaydı ekleme
+            const response = await fetch("http://localhost:8090/api/paymentRecords/add", {
+               method: "POST",
+               headers: {
+                  "Content-Type": "application/json",
+               },
+               body: JSON.stringify({
+                  carId: carId,
+                  amount: carPrice,
+                  userMetamask: fromAddress,
+                  transactionHash: txHash,
+               }),
+               credentials: "include",
+            });
+            if (!response.ok) {
+               const errorText = await response.text();
+               console.error("Ödeme kaydı hatası:", errorText);
+               alert(`Ödeme kaydı hatası: ${errorText}`);
+               return;
+            }
+
+            if (response.ok && response2.ok) {
+               alert("Ödeme bilgileri kaydedildi!");
+               alert("Araç durumu güncellendi");
+            } else {
+               const errorData = await response.json();
+               alert(`Backend hatası: ${errorData.message}`);
+            }
+         } catch (error) {
+            console.error("Ödeme işlemi başarısız:", error);
+            alert(`Ödeme işlemi başarısız: ${error.message}`);
+         }
+      } else {
+         alert("MetaMask yüklü değil. Lütfen MetaMask'ı yükleyin.");
+      }
+   }
+
+
+
+
+</script>

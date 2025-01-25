@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Araba Silme</title>
+</head>
+<body>
+
+<button id="silButton">Araba Sil</button>
+
+<script>
+    document.getElementById("silButton").addEventListener("click", function() {
+        var arabaid = prompt("Silmek istediğiniz arabanın ID'sini girin:");
+        if (arabaid) {
+            silAraba(arabaid);
+        }
+    });
+
+    function silAraba(arabaid) {
+        // AJAX kullanarak silme isteği gönderme
+        var xhr = new XMLHttpRequest();
+        xhr.open("DELETE", "/delete/" + arabaid, true);
+
+        xhr.onload = function() {
+            if (xhr.status == 200) {
+                alert("Araba başarıyla silindi.");
+            } else {
+                alert("Araba silinirken bir hata oluştu.");
+            }
+        };
+
+        xhr.send();
+    }
+</script>
+
+</body>
+</html>

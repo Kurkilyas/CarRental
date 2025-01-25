@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Rent Car Now </title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="css/addCar.css">
+</head>
+<body>
+<div class="add-car-container">
+    <h2>Add Car</h2>
+
+    <form id="addCarForm" action="/ekleme" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="plate">Plate:</label>
+            <input type="text" id="plate" name="plate" placeholder="plate">
+
+            <label for="dailyPrice">Price (Daily eth):</label>
+            <input type="number" id="dailyPrice" name="dailyPrice" placeholder="eth giriniz" step="0.0001" min="0" required>
+
+
+            <label for="dateOfAnnouncement">DateOfAnnouncement:</label>
+            <input type="text" id="dateOfAnnouncement" name="dateOfAnnouncement" placeholder="$...">
+        </div>
+
+        <div class="form-group">
+            <label for="modelYear">Model Year:</label>
+            <input type="number" id="modelYear" name="modelYear" placeholder="2020, 2021 ...">
+
+            <label for="km">Km:</label>
+            <input type="number" id="km" name="km" placeholder="... km">
+        </div>
+
+        <div class="form-group">
+            <label for="modelId">Model:</label>
+            <select id="modelId" name="modelId"></select>
+
+            <label for="colorId">Color:</label>
+            <select id="colorId" name="colorId"></select>
+        </div>
+
+        <div class="form-group">
+            <label for="stateId">State:</label>
+            <select id="stateId" name="stateId"></select>
+
+            <label for="fuelId">Fuel:</label>
+            <select id="fuelId" name="fuelId"></select>
+        </div>
+
+        <div class="form-group">
+            <label for="gearId">Gear:</label>
+            <select id="gearId" name="gearId"></select>
+
+            <label for="statusId">Car Status:</label>
+            <select id="statusId" name="statusId"></select>
+        </div>
+        <div class="form-group">
+            <label for="carPhoto">Car Photo:</label>
+            <input type="file" id="carPhoto" name="carPhoto" >
+        </div>
+
+        <div id="success-message" style="color: green; margin-top: 10px;"></div>
+        <input type="submit" value="Ekle">
+    </form>
+
+    <!-- Başarı mesajını gösterecek div -->
+
+</div>
+
+<script src="../public/js/jquery.min.js"></script>
+<script src="js/addCar.js"></script>
+<script>$("#addCarForm").submit(function (event) {
+    event.preventDefault();
+
+    var formData = new FormData(this);
+
+    $.ajax({
+        url: "/ekleme",
+        type: "POST",
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function (response) {
+            // Backend'den gelen başarı mesajını alıp success-message div'ine yazdırıyoruz
+            if (response.success) {
+                $("#success-message").text(response.message).show().css('color', 'green');
+            }
+        },
+        error: function (xhr, status, error) {
+            // Hata durumunda backend'den gelen hata mesajını gösteriyoruz
+            var errorMessage = xhr.responseJSON ? xhr.responseJSON.message : "Bir hata oluştu";
+            $("#success-message").text(errorMessage).show().css('color', 'red');
+        }
+
+    });
+});</script>
+</body>
+</html>
+

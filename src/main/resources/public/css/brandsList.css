@@ -1,0 +1,14 @@
+.brand-button {
+    background-color: #fe5b29;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.brand-button:hover {
+    background-color: #000000;
+}
